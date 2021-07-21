@@ -21,6 +21,8 @@ public class playerController : MonoBehaviour
     float mouseYSmooth = 0;
     Vector3 defaultShipRotation;
 
+    bool landed = false;
+
     void Start()
     {
         r = GetComponent<Rigidbody>();
@@ -35,36 +37,48 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if (landed == false)
         {
-            speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
-        }
-        else if (Input.GetButton("accelerate"))
-        {
-            speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
-        }
-        else
-        {
-            speed = Mathf.Lerp(speed, normalSpeed, Time.deltaTime * 10);
-        }
+            if (Input.GetMouseButton(1))
+            {
+                speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+            }
+            else if (Input.GetKey(KeyCode.W))
+            {
+                speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+            }
+            else if (Input.GetButton("accelerate"))
+            {
+                speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+            }
+            else
+            {
+                speed = Mathf.Lerp(speed, normalSpeed, Time.deltaTime * 10);
+            }
 
-        Vector3 moveDirection = new Vector3(0, 0, speed);
-        moveDirection = transform.TransformDirection(moveDirection);
-        r.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
+            Vector3 moveDirection = new Vector3(0, 0, speed);
+            moveDirection = transform.TransformDirection(moveDirection);
+            r.velocity = new Vector3(moveDirection.x, moveDirection.y, moveDirection.z);
+        }
 
         mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, cameraPosition.position, Time.deltaTime * cameraSmooth);
         mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.transform.rotation, cameraPosition.rotation, Time.deltaTime * cameraSmooth);
 
+        if (Input.GetButton("land") || Input.GetKey(KeyCode.Q))
+        {
+            landed = true;
+        }
+        else
+        {
+            landed = false;
+        }
+
         float rotationZTmp = 0;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetButton("yawLeft"))
         {
             rotationZTmp = 1;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetButton("yawRight"))
         {
             rotationZTmp = -1;
         }

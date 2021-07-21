@@ -39,11 +39,11 @@ public class playerController : MonoBehaviour
         {
             speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
-        else
+        else if (Input.GetKey(KeyCode.W))
         {
-            speed = Mathf.Lerp(speed, normalSpeed, Time.deltaTime * 10);
+            speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetButton("accelerate"))
         {
             speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
@@ -68,8 +68,13 @@ public class playerController : MonoBehaviour
         {
             rotationZTmp = -1;
         }
+
         mouseXSmooth = Mathf.Lerp(mouseXSmooth, Input.GetAxis("Mouse X") * rotationSpeed, Time.deltaTime * cameraSmooth);
         mouseYSmooth = Mathf.Lerp(mouseYSmooth, Input.GetAxis("Mouse Y") * rotationSpeed, Time.deltaTime * cameraSmooth);
+
+        mouseXSmooth = Mathf.Lerp(mouseXSmooth, Input.GetAxis("HorizontalController") * rotationSpeed, Time.deltaTime * cameraSmooth);
+        mouseYSmooth = Mathf.Lerp(mouseYSmooth, Input.GetAxis("VerticalController") * rotationSpeed, Time.deltaTime * cameraSmooth);
+
         Quaternion localRotation = Quaternion.Euler(-mouseYSmooth, mouseXSmooth, rotationZTmp * rotationSpeed);
         lookRotation = lookRotation * localRotation;
         transform.rotation = lookRotation;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -119,11 +119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692430036}
     m_Modifications:
-    - target: {fileID: 1181232408664930894, guid: 8341b87f76d73f5499b5238607391b1b,
-        type: 3}
-      propertyPath: m_Name
-      value: planet4
-      objectReference: {fileID: 0}
     - target: {fileID: 994222102858479367, guid: 8341b87f76d73f5499b5238607391b1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181232408664930894, guid: 8341b87f76d73f5499b5238607391b1b,
+        type: 3}
+      propertyPath: m_Name
+      value: planet4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8341b87f76d73f5499b5238607391b1b, type: 3}
@@ -247,30 +247,20 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 889720430}
   m_PrefabAsset: {fileID: 0}
---- !u!205 &191083443
-LODGroup:
+--- !u!64 &191083444
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191083439}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.7443802
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.54531384
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.36573932
-    fadeTransitionWidth: 0
-    renderers: []
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: f8a1625c1d4f4b74984935dd4ecab1ed, type: 3}
 --- !u!1 &281682592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8502628680509354144, guid: 46eff4d9455ae1742b690025198e63ab,
@@ -368,6 +358,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8583523389217511545, guid: 038970fe55e78ee4c9137adfe00c867a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5512cd3196753244b2a407d251fd3cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038970fe55e78ee4c9137adfe00c867a, type: 3}
 --- !u!1001 &328945762
@@ -550,6 +545,7 @@ GameObject:
   - component: {fileID: 386273661}
   - component: {fileID: 386273660}
   - component: {fileID: 386273659}
+  - component: {fileID: 386273658}
   m_Layer: 0
   m_Name: beautifullSpaceShipPlaceholder
   m_TagString: Untagged
@@ -557,6 +553,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &386273658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386273657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &386273659
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -646,7 +655,6 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
-  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -778,22 +786,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!54 &534669907
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &588524093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2784365891571024822, guid: 46eff4d9455ae1742b690025198e63ab,
@@ -885,6 +877,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6518348850030502627, guid: 96dd41e9f0b8da24bb1d64676740e4a1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5512cd3196753244b2a407d251fd3cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96dd41e9f0b8da24bb1d64676740e4a1, type: 3}
 --- !u!1 &692430034
@@ -947,8 +944,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692430034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 40.4, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 833658868}
   - {fileID: 1793406961}
@@ -994,7 +991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalSpeed: 2
-  accelerationSpeed: 2
+  accelerationSpeed: 4
   cameraPosition: {fileID: 1435895341}
   mainCamera: {fileID: 534669904}
   spaceshipRoot: {fileID: 386273661}
@@ -1009,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761498444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -180.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 386273661}
@@ -1115,10 +1112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692430036}
     m_Modifications:
-    - target: {fileID: 3496134286214975008, guid: 46eff4d9455ae1742b690025198e63ab,
+    - target: {fileID: 2684337177457028534, guid: 46eff4d9455ae1742b690025198e63ab,
         type: 3}
-      propertyPath: m_Name
-      value: planet1
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2784365891571024822, guid: 46eff4d9455ae1742b690025198e63ab,
         type: 3}
@@ -1175,10 +1172,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2684337177457028534, guid: 46eff4d9455ae1742b690025198e63ab,
+    - target: {fileID: 3496134286214975008, guid: 46eff4d9455ae1742b690025198e63ab,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_Name
+      value: planet1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46eff4d9455ae1742b690025198e63ab, type: 3}
@@ -1286,8 +1283,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -1364,7 +1359,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.771629, b: 0, a: 1}
   m_Intensity: 1.35
-  m_Range: 30
+  m_Range: 100
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1457,7 +1452,7 @@ Transform:
   m_GameObject: {fileID: 1414527752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1516,10 +1511,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010098856}
     m_Modifications:
-    - target: {fileID: 3496134286214975008, guid: 46eff4d9455ae1742b690025198e63ab,
+    - target: {fileID: 2684337177457028534, guid: 46eff4d9455ae1742b690025198e63ab,
         type: 3}
-      propertyPath: m_Name
-      value: planet1
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2784365891571024822, guid: 46eff4d9455ae1742b690025198e63ab,
         type: 3}
@@ -1576,11 +1571,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2684337177457028534, guid: 46eff4d9455ae1742b690025198e63ab,
+    - target: {fileID: 3496134286214975008, guid: 46eff4d9455ae1742b690025198e63ab,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_Name
+      value: planet1
       objectReference: {fileID: 0}
+    - target: {fileID: 8502628680511286882, guid: 46eff4d9455ae1742b690025198e63ab,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5512cd3196753244b2a407d251fd3cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46eff4d9455ae1742b690025198e63ab, type: 3}
 --- !u!23 &1537687064 stripped
@@ -1607,36 +1607,26 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1492630611}
   m_PrefabAsset: {fileID: 0}
---- !u!205 &1671113371
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1671113369}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.7443802
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.54531384
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.36573932
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!23 &1671113373 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8502628680511286882, guid: 46eff4d9455ae1742b690025198e63ab,
     type: 3}
   m_PrefabInstance: {fileID: 1492630611}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1671113374
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671113369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: f8a1625c1d4f4b74984935dd4ecab1ed, type: 3}
 --- !u!4 &1793406961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3826657592368802570, guid: 96dd41e9f0b8da24bb1d64676740e4a1,
@@ -1656,11 +1646,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2010098856}
     m_Modifications:
-    - target: {fileID: 1181232408664930894, guid: 8341b87f76d73f5499b5238607391b1b,
-        type: 3}
-      propertyPath: m_Name
-      value: planet4
-      objectReference: {fileID: 0}
     - target: {fileID: 994222102858479367, guid: 8341b87f76d73f5499b5238607391b1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1716,6 +1701,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181232408664930894, guid: 8341b87f76d73f5499b5238607391b1b,
+        type: 3}
+      propertyPath: m_Name
+      value: planet4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4803521898096688182, guid: 8341b87f76d73f5499b5238607391b1b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5512cd3196753244b2a407d251fd3cc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8341b87f76d73f5499b5238607391b1b, type: 3}
 --- !u!23 &1869593027 stripped
@@ -1862,8 +1857,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010098854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 85.9, y: 0, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 588524093}
   - {fileID: 706024856}
@@ -1927,8 +1922,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0

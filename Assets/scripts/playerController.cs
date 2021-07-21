@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    public float normalSpeed = 25f;
-    public float accelerationSpeed = 45f;
+    public float normalSpeed = 2f;
+    public float accelerationSpeed = 2f;
     public Transform cameraPosition;
     public Camera mainCamera;
     public Transform spaceshipRoot;
@@ -37,7 +37,15 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            speed = Mathf.Lerp(speed, accelerationSpeed, Time.deltaTime * 3);
+            speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+        }
+        else
+        {
+            speed = Mathf.Lerp(speed, normalSpeed, Time.deltaTime * 10);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
         else
         {

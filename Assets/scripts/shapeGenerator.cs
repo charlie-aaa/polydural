@@ -6,15 +6,15 @@ public class shapeGenerator
 {
 
     shapeSettings settings;
-    noiseFilter[] noiseFilters;
+    INoiseFilter[] noiseFilters;
 
     public shapeGenerator(shapeSettings settings)
     {
         this.settings = settings;
-        noiseFilters = new noiseFilter[settings.noiseLayers.Length];
+        noiseFilters = new INoiseFilter[settings.noiseLayers.Length];
         for (int i = 0; i < noiseFilters.Length; i++)
         {
-            noiseFilters[i] = new noiseFilter(settings.noiseLayers[i].noiseSettings);
+            noiseFilters[i] = noiseFilterFactory.CreateNoiseFilter(settings.noiseLayers[i].noiseSettings);
         }
     }
 

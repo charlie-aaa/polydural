@@ -37,15 +37,15 @@ public class playerController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+            speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
         else if (Input.GetKey(KeyCode.W))
         {
-            speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+            speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
         else if (Input.GetButton("accelerate"))
         {
-            speed = Mathf.Lerp(speed + accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
+            speed = Mathf.Lerp(accelerationSpeed, accelerationSpeed, Time.deltaTime * 3);
         }
         else
         {

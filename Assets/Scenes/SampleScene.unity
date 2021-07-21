@@ -991,8 +991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391a61ed3aa96f74bb50d9d03548abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSpeed: 2
-  accelerationSpeed: 4
+  normalSpeed: 5
+  accelerationSpeed: 20
   cameraPosition: {fileID: 1435895341}
   mainCamera: {fileID: 534669904}
   spaceshipRoot: {fileID: 386273661}
@@ -1608,7 +1608,9 @@ MonoBehaviour:
   solarSystemGravityObject: {fileID: 1414527752}
   planet1: {fileID: 692430034}
   planet2: {fileID: 2010098854}
-  moveDelay: 10
+  moveDelay: 100
+  planetForce: 132
+  planetForce1: 287
 --- !u!1 &1435895340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,7 +1995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010098854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 254.5, y: 0, z: 0}
+  m_LocalPosition: {x: -287, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 588524093}
